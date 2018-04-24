@@ -8,7 +8,7 @@
         <ul class="navbar-nav mr-auto">
             {% if include.authed %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/find-friends/">Find Friends</a>
+                    <a class="nav-link" href="{{ '/find-friends/' | relative_url }}">Find Friends</a>
                 </li>
             {% else %}
                 <li class="nav-item">
@@ -18,10 +18,10 @@
         </ul>
 
         {% unless include.authed %}
-            <a class="btn btn-success my-2 my-sm-0" href="/register/" role="button">Register</a>
-            <a class="btn btn-outline-success my-2 my-sm-0 ml-3" href="/login/" role="button">Login</a>
+            <a class="btn btn-success my-2 my-sm-0" href="{{ '/register/' | relative_url }}" role="button">Register</a>
+            <a class="btn btn-outline-success my-2 my-sm-0 ml-3" href="{{ '/login/' | relative_url }}" role="button">Login</a>
         {% else %}
-            <a class="btn btn-success my-2 my-sm-0" href="/" role="button">Logout</a>
+            <a class="btn btn-success my-2 my-sm-0" href="{{ '/' | relative_url }}" role="button">Logout</a>
         {% endunless %}
     </div>
 </nav>
