@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+    <a class="navbar-brand" href="#">{{ site.title }}</a>
+    <button class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% if include.authed %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/find-friends/">Find Friends</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+            {% endif %}
+        </ul>
+
+        {% unless include.authed %}
+            <a class="btn btn-success my-2 my-sm-0" href="/register/" role="button">Register</a>
+            <a class="btn btn-outline-success my-2 my-sm-0 ml-3" href="/login/" role="button">Login</a>
+        {% else %}
+            <a class="btn btn-success my-2 my-sm-0" href="/" role="button">Logout</a>
+        {% endunless %}
+    </div>
+</nav>
