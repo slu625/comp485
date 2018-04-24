@@ -3,15 +3,33 @@ layout: default
 ---
 
 <head>
-    <link rel="shortcut icon" type="image/png" href="http://www.bristol.ac.uk/media-library/sites/primaryhealthcare/images/responds/BeeCartoonOnly_forwebsite.pg"/>
-    <nav class="navbar navbar-expand-lg navbar-custom bg-dark">
-        <div class="collapse navbar-collapse" id="navbarText">
-            <form class="navbar-nav mr-auto form-inline">
-                <input class="form-control mr-sm-2" type="username" placeholder="Username" aria-label="Username">
-                <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
-                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"><a href="find-friends.html" style="color:yellow;">Login</a></button>
-            </form>
-         </div>
-    </nav>
-                
+   
 </head>
+<body>
+    <style type="text/css">
+        div.col-md-12{
+            background-image: url("http://bristol.ac.uk/media-library/sites/primaryhealthcare/images/responds/BeeCartoonOnly_forwebsite.jpg");
+        }
+        .container {
+            width:100px;
+            height:20px;
+        }
+        ul.list {
+            display:inline-block;
+            margin:0 auto;
+        }
+        h2 {
+            display:inline-block;
+        }
+    </style>
+    <h1 align="center">Feeling Lonely? Start looking for friends now!</h1>
+    <div class="col-md-12" align="center" style="height: 300px;">
+        <br /> <br/><br/><br/><br/>
+        <form autocomplete="off" id="search_form" method="post" style="z-index:0;">
+            <div class="form-group">
+                <a type="button" class="btn" href="register.html" style="background:black; border:#800000; width:209px; color:yellow; height:36px; font-family:'Franklin Gothic Medium';">Get Started</a>
+            </div>
+        </form>
+        <br/>
+    </div>
+</body>
