@@ -20,7 +20,7 @@ friends:
 <p>Here are the bfriends in your area matching your search criteria.</p>
 
 {% for friend in page.friends %}
-    <div class="media mb-5">
+    <div class="media mb-5" data-uid="{{ forloop.index }}">
         <img class="mr-3" src="https://placehold.it/100x100" alt="Generic placeholder image">
         <div class="media-body">
             <h5 class="m-0">{{ friend.name }} <small class="ml-1">(<span class="text-success">{{ friend.match}}% match</span>)</small></h5>
@@ -30,8 +30,14 @@ friends:
             </div>
 
             <div>
-                <button class="btn btn-success">Connect</button>
-                <button class="btn btn-outline-danger">Dismiss</button>
+                <button class="btn btn-success">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Connect
+                </button>
+                <button class="btn btn-outline-danger" data-role="dismiss" data-dismiss="{{ forloop.index }}">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    Dismiss
+                </button>
             </div>
         </div>
     </div>
