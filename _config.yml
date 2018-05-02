@@ -16,3 +16,16 @@ markdown: kramdown
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+collections:
+  friends:
+    output: true
+    permalink: /:collection/:name/
+
+defaults:
+  - scope:
+        path: ""
+        type: friends
+    values:
+        layout: profile
+        authed: true

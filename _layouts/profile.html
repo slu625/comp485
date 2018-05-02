@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
+        <div class="row mb-4">
+            <div class="col-md-auto text-center">
+                <img class="img-thumbnail" src="https://placehold.it/100x100" alt="Generic placeholder image">
+            </div>
+            <div class="col-md d-flex align-items-end">
+                <h1 class="mb-0">{{ page.name }}</h1>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <p class="text-success"><strong>({{ page.match }}% match)</strong></p>
+
+            {{ content }}
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-success w-100 w-md-auto mr-md-4 mb-3">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Add BFriend
+            </button>
+
+            <button class="btn btn-primary w-100 w-md-auto mr-md-4 mb-3">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                Send Message
+            </button>
+
+            <button class="btn btn-outline-danger w-100 w-md-auto mb-3">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                Report
+            </button>
+        </div>
+    </div>
+</div>

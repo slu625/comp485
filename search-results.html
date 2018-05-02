@@ -2,38 +2,28 @@
 layout: default
 permalink: /search/results/
 authed: true
-
-friends:
-    - name: Dkong
-      bio: Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex molestiae voluptatem, minima, saepe, voluptatum eos recusandae ipsa tempore facilis nemo molestias aspernatur rem in nesciunt. Facere temporibus magnam aliquid reprehenderit?
-      match: 97
-    - name: Julius Caesar
-      bio: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae omnis aspernatur vitae ducimus explicabo quisquam sed odio asperiores enim, autem sunt voluptates doloribus! Eum quod officiis magnam aliquam ipsum suscipit.
-      match: 92
-    - name: Jane SmithyMcSmithFace
-      bio: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil molestiae nam blanditiis fuga vel! Sequi necessitatibus nisi quam quaerat sint ullam corrupti. Culpa, vitae numquam accusantium earum perferendis consequatur et.
-      match: 84
 ---
 
 <h2>Meet your New BFriend</h2>
 
 <p>Here are the bfriends in your area matching your search criteria.</p>
 
-{% for friend in page.friends %}
+{% assign friends = site.friends | sort: 'match' | reverse %}
+{% for friend in friends %}
     <div class="media mb-5" data-uid="{{ forloop.index }}">
         <img class="mr-3" src="https://placehold.it/100x100" alt="Generic placeholder image">
         <div class="media-body">
             <h5 class="m-0">{{ friend.name }} <small class="ml-1">(<span class="text-success">{{ friend.match}}% match</span>)</small></h5>
 
             <div class="mb-3">
-                {{ friend.bio }}
+                {{ friend.content }}
             </div>
 
             <div>
-                <button class="btn btn-success">
+                <a class="btn btn-success" href="{{ friend.url | relative_url }}" role="button">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                     Connect
-                </button>
+                </a>
                 <button class="btn btn-outline-danger" data-role="dismiss" data-dismiss="{{ forloop.index }}">
                     <i class="fa fa-times" aria-hidden="true"></i>
                     Dismiss
